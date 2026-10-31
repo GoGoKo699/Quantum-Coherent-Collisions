@@ -20,13 +20,13 @@ To retain the complete numerical report outside the source tree:
 python3 verification/check_science.py --json /tmp/coherent-collision-checks.json
 ~~~
 
-The program exits nonzero on a failed condition. Assertions are implemented as explicit runtime checks and remain active under optimized Python. The seed is fixed for reproducibility. Floating-point comparisons use a tolerance of $3\times10^{-11}$; the proof statements themselves are exact mathematical statements.
+The program exits nonzero on a failed condition. Assertions are implemented as explicit runtime checks and remain active under optimized Python. The seed is fixed for reproducibility. Floating-point comparisons use a tolerance of $`3\times10^{-11}`$; the proof statements themselves are exact mathematical statements.
 
 ## What is checked
 
 | Check | Independent comparison | Scope |
 |---|---|---|
-| Kraus instrument | Construct accepted branches in the symmetric basis and accumulate their effects | 39 cases with $N=2,\ldots,4$, $r=2,\ldots,4$, several batch sizes and complex, uniform, concentrated and zero-amplitude inputs |
+| Kraus instrument | Construct accepted branches in the symmetric basis and accumulate their effects | 39 cases with $`N=2,\ldots,4`$, $`r=2,\ldots,4`$, several batch sizes and complex, uniform, concentrated and zero-amplitude inputs |
 | Exact output | Compare every branch and the accepted density operator with the factored powered target | Includes branches with zero norm and batches with zero success |
 | Success formula | Compare the quantum calculation, multinomial identity and an ordered-label-string enumeration | Checks factorial normalization and residual occupancy |
 | Reversible extraction | Execute the stated controlled suffix swaps, tail XORs and reconstruction of run records | 1,085 accepted occupation/list cases |
@@ -34,9 +34,9 @@ The program exits nonzero on a failed condition. Assertions are implemented as e
 | Calibration | Enumerate the finite stopping-time Markov chain and compare its mean with a separate backward recurrence | 21 pilot laws, including deterministic and zero-probability labels |
 | Accuracy convention | Numerically integrate the explicit one-copy qubit counterexample | Distinguishes success-weighted fidelity from unweighted conditional fidelity |
 
-A reference run yields status **pass** with the counts above. The largest ordered-sample discrepancy is below $4\times10^{-15}$, and the branch-factorization discrepancy is below $10^{-15}$. Exact floating-point values may vary slightly by platform while remaining far below the stated tolerance.
+A reference run yields status **pass** with the counts above. The largest ordered-sample discrepancy is below $`4\times10^{-15}`$, and the branch-factorization discrepancy is below $`10^{-15}`$. Exact floating-point values may vary slightly by platform while remaining far below the stated tolerance.
 
-The fidelity counterexample gives weighted fidelity $1/2$, unweighted conditional fidelity $1/2+1/(3\sqrt3)\approx0.69245$, and minimum success approximately $0.07180$.
+The fidelity counterexample gives weighted fidelity $`1/2`$, unweighted conditional fidelity $`1/2+1/(3\sqrt3)\approx0.69245`$, and minimum success approximately $`0.07180`$.
 
 ## What the checks do not establish
 

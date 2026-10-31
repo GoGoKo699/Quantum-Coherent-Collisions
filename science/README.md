@@ -2,7 +2,7 @@
 
 The question is how many copies of an unknown pure state are needed to prepare a normalized coordinatewise power of its amplitudes while preserving the multiplied relative phases.
 
-For every fixed integer $r\ge2$, a collective heralded construction produces the exact power with expected $O_r(S_r^{-1/r})$ consumed copies, including calibration and retries. The robust worst-case copy law is $\Theta_r(N^{1-1/r})$. The explicit construction, adaptive schedule, converse and charged implementation form one connected account.
+For every fixed integer $`r\ge2`$, a collective heralded construction produces the exact power with expected $`O_r(S_r^{-1/r})`$ consumed copies, including calibration and retries. The robust worst-case copy law is $`\Theta_r(N^{1-1/r})`$. The explicit construction, adaptive schedule, converse and charged implementation form one connected account.
 
 ## Reading route
 
