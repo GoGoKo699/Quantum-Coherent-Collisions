@@ -1,0 +1,112 @@
+# Quantum Coherent Collisions
+
+This repository studies exact heralded coordinatewise amplitude powers of an
+unknown pure state from supplied copies, their optimal worst-case copy cost,
+unknown-moment calibration, and an explicitly charged collective implementation.
+The scientific account is organized by topic under science/.
+
+Canonical entrypoints:
+- README.md: scientific question, principal copy law, baseline comparison,
+  direct proof route, selected educational anchor, reproduction command,
+  and purpose and contact.
+- science/README.md: connected account and proof dependencies.
+- science/model.md: authoritative input model, coherent target, charged resources,
+  success and fidelity conventions, expected versus hard budgets, fixed-power
+  scope, and exact profile-minimax consequence.
+- science/coherent_extraction.md: symmetric occupation expansion, successful
+  Kraus instrument, validity, exact output-residual factorization, success
+  identity, constant-success batch, and hard-budget geometric schedule.
+- science/unknown_moment.md: first-r-collision pilot, Poissonized mean bound,
+  exact rational batch selection, independent fresh coherent block, renewal
+  accounting, stopping bound, and realized-memory distinction.
+- science/converse.md: arbitrary successful CP maps, torus twirling, charge
+  blocks, hard-budget theorem, success-weighted fidelity, explicit failure
+  of an unweighted conditional average, expected-budget bound, and exact
+  fixed-profile phase-minimax theorem.
+- science/implementation.md: Boolean eligibility projection, charged inverse
+  repeated-list symmetrization, bounded-run permutation resources, sparse
+  reversible extraction, multiplicity rotation, record cleanup, gates,
+  storage, connectivity, and finite-synthesis conditional error.
+- science/interpretation.md: coherent output versus classical collision samples,
+  phase multiplication, effective support, structured promises, and resource limits.
+- references/RELATED_WORK.md: primary attribution and precise model comparisons,
+  including the supplied-copy Fourier-support predecessor, source-unitary
+  transforms, qubit filters, covariance, collisions and symmetrization.
+- references/references.bib: bibliographic metadata.
+- verification/README.md: reproducibility commands, finite coverage and limits.
+- verification/check_science.py: deterministic standard-library verification runner.
+
+Learning entrypoints:
+- learning/MILESTONES.md: the canonical project map, exactly M01-M30;
+  11 background/preliminaries milestones and 19 narrative/innovation milestones,
+  with questions, understanding targets, earlier dependencies, conceptual
+  connections and scientific references.
+- learning/WATROUS_BRIDGE.md: the single selected educational anchor,
+  John Watrous's The Theory of Quantum Information (2018), with verified
+  section routes, notation and convention translation, and project connections.
+- Author's book page: https://jhwatrous.github.io/books-and-courses.html
+- Author's complete manuscript: https://jhwatrous.github.io/TQI.pdf
+
+Reader routes:
+- To understand the story: begin with science/model.md; follow exact extraction,
+  unknown-moment adaptation and the converse; read implementation for the charged
+  operations and connect the conclusions in science/interpretation.md.
+- For self-directed study: use the Watrous bridge alongside M01-M30. The common
+  map follows the project's dependencies rather than a particular reader's
+  starting knowledge. Primary research papers supply attribution and imported
+  ingredients; they are not additional assigned textbooks.
+- To inspect a theorem: first read science/model.md for its quantifiers and
+  metrics, then the full relevant proof file and primary source attribution.
+  An introductory explanation or milestone target is not a substitute for
+  the theorem's hypotheses or proof.
+- To reproduce a finite ingredient: read verification/README.md, then run
+  python3 verification/check_science.py from the repository root.
+  Python 3.10 or later and the standard library suffice. Distinguish a fresh
+  execution from a documented reference result.
+
+Preserve these distinctions when explaining or editing:
+- The supplied resource is identical copies of one unknown pure state.
+  Preparation unitaries, adjoints, source reflections, amplitude oracles,
+  QRAM and phase-dependent side information are different access models.
+- The output is a normalized coherent state with amplitudes alpha_i^r.
+  Sampling only its computational-basis distribution does not solve the task.
+- The known basis matters. A global phase does not change the output density
+  operator, but relative phases are multiplied by r.
+- r is a fixed integer at least two. O_r and Theta_r hide r-dependent constants;
+  no favorable growing-r complexity is claimed.
+- All copies are charged, including calibration, rejected coherent batches and
+  retries. The moment-adaptive O_r(S_r^(-1/r)) guarantee is an expectation,
+  not a deterministic instance-sized copy or workspace cap.
+- The geometric schedule gives a separate O_r(N^(1-1/r)) hard budget with
+  constant success. The robust matching lower bound also extends to expected
+  costs under its stated success-weighted accuracy condition.
+- Exact profile-minimax optimality fixes a nontrivial amplitude profile and
+  permits all continuous phases, even when the profile is known. It is not
+  constant-error instance optimality for every profile or promised family.
+- For heralded maps, twirl the unnormalized successful map. Average target
+  overlap equals average success times success-weighted conditional fidelity.
+  An unweighted average of conditional fidelity is insufficient; see the
+  explicit one-copy counterexample in science/converse.md.
+- The project's pure-target fidelity is target population, the square of the
+  root-fidelity convention used by Watrous. Trace distance includes the
+  one-half factor. Consult the bridge before translating inequalities.
+- Fourier support can provide a cheaper promised-family transformation.
+  Huang et al.'s fixed unamplified circuit accepts supplied copies; its exact
+  shortcut uses a suitable support window. Unknown window information and
+  pilot samples are charged, and truncation changes the output.
+- Exactness belongs to the ideal known-rotation instrument. A finite universal
+  gate implementation has a quantified conditional error. The aggregate
+  pilot-plus-coherent trial is normalized after averaging its pilot outcomes;
+  a tiny-probability transcript cannot be assigned a free error guarantee.
+- Collective storage, inverse symmetrization, permutation resources, sparse
+  extraction, multiplicity filtering and cleanup are charged. Coherent sorting
+  records cannot simply be discarded. No polylogarithmic depth for the whole
+  extraction circuit or geometry-optimized architecture is claimed.
+- The nonlinear target, elementary postselection, covariance framework,
+  qubit filters, collision antecedents and coherent symmetrizer have prior
+  sources. Read the attribution before assigning an originality claim.
+- Finite checks test normalization, phases, indexing and finite maps. They do
+  not prove universal/asymptotic statements or run the complete inherited
+  symmetrizer at gate level, and do not constitute external review.
+- Arbitrary mixed or drifting sources, unrelated two-source products and
+  application-level computational speedups are not established by this result.

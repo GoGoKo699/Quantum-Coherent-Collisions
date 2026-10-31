@@ -57,7 +57,7 @@ Let $`P_{\mathrm{col}}^{(r)}(t;N)`$ be the probability that $`t`$ independent un
 \overline w\le\frac{\overline s}{N}
 +\left(1-\frac1N\right)P_{\mathrm{col}}^{(r)}(t;N).
 }
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Moreover,
@@ -65,7 +65,7 @@ Moreover,
 ```math
 P_{\mathrm{col}}^{(r)}(t;N)
 \le \min\!\left\{1,\binom tr N^{1-r}\right\}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The map may include all accepted classical records, any record-dependent correction to the output, and a partial trace over all remaining systems. A protocol requesting at most $`t`$ copies adaptively can be supplied all $`t`$ at the beginning and discard unused registers. Thus its successful action has precisely the form above. This argument concerns ordinary supplied copies, not coherent oracle access to an unknown preparation procedure.
@@ -81,7 +81,7 @@ Let $`D_\theta=\mathrm{diag}(e^{i\theta_1},\ldots,e^{i\theta_N})`$. On the symme
 =\int V_\theta^\dagger
 \mathcal S(U_\theta XU_\theta^\dagger)
 V_\theta\,d\mu(\theta).
-\tag{3}
+\qquad\text{(3)}
 ```
 
 Integration preserves complete positivity and trace nonincrease. Translation invariance of Haar measure gives
@@ -89,7 +89,7 @@ Integration preserves complete positivity and trace nonincrease. Translation inv
 ```math
 \widetilde{\mathcal S}(U_\phi XU_\phi^\dagger)
 =V_\phi\widetilde{\mathcal S}(X)V_\phi^\dagger.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 On the zero-phase input, the trace and target overlap of $`\widetilde{\mathcal S}`$ are exactly $`\overline s`$ and $`\overline w`$. It is essential that the **subnormalized map** is twirled: its conditional fidelity is $`\overline w/\overline s`$, not the unweighted average of $`F_\theta`$.
@@ -137,7 +137,7 @@ K_{z,\ell}
 k_{z,\ell,i}|i\rangle\langle z+re_i|_{\mathrm{sym}},
 \qquad
 \sum_{z,\ell}K_{z,\ell}^\dagger K_{z,\ell}\le I.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 No covariance property was assumed for individual Kraus operators of the original protocol. Equation (5) is obtained from the positive Choi blocks of its twirl.
@@ -167,7 +167,7 @@ The combined effect of all these Kraus operators obeys
 ```math
 0\le M_+:=\sum_{z\ge0,\ell}K_{z,\ell}^\dagger K_{z,\ell}
 \le\Pi_{\mathrm{col}}.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Indeed, trace nonincrease gives $`M_+\le I`$, while its support lies within $`\Pi_{\mathrm{col}}`$. Let $`s_+`$ and $`s_-`$ be the successful traces on the zero-phase input from the nonnegative and negative charge sectors. Then
@@ -208,7 +208,7 @@ Suppose
 \overline w\ge(1-\varepsilon)\overline s,
 \qquad
 \varepsilon\lt 1-\frac1N.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 These assumptions hold, in particular, if every input has success probability at least $`s_0`$ and every normalized successful output has fidelity at least $`1-\varepsilon`$. More generally, (7) is an average-success and **success-weighted** average-fidelity condition.
@@ -226,7 +226,7 @@ Theorem 1 implies
 P_{\mathrm{col}}^{(r)}(t;N)\ge\kappa_0,
 \qquad
 t\ge (r!\kappa_0)^{1/r}N^{1-1/r}.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 For fixed $`r,s_0\gt 0`$ and fixed $`\varepsilon\lt 1`$, this is $`\Omega_r(N^{1-1/r})`$ for sufficiently large $`N`$, with constants also depending on $`s_0`$ and $`\varepsilon`$. The claim is about a constant error bounded away from one, not uniform constants as the fidelity advantage approaches zero.
@@ -235,7 +235,7 @@ If the successful output is exact, (1) simplifies to
 
 ```math
 \overline s\le P_{\mathrm{col}}^{(r)}(t;N).
-\tag{9}
+\qquad\text{(9)}
 ```
 
 For a deterministic processor, $`s_\theta=1`$, and
@@ -298,7 +298,7 @@ This is weaker than assuming a uniform expected-cost bound for every phase. The 
 \overline w-\frac{\overline s}{N}
 \le\left(1-\frac1N\right)
 \left(P_{\mathrm{col}}^{(r)}(t;N)+\frac{\overline T}{t+1}\right).
-\tag{10}
+\qquad\text{(10)}
 ```
 
 Consequently, if
@@ -314,7 +314,7 @@ then
 \overline T\ge
 \frac\kappa2\left(\frac{r!\kappa}{2}\right)^{1/r}N^{1-1/r}.
 }
-\tag{11}
+\qquad\text{(11)}
 ```
 
 Under (7), one may replace $`\kappa`$ on the right by $`\kappa_0`$. In particular, constant success and constant conditional fidelity above the baseline require the same worst-case dimension exponent for expected budgets.
@@ -372,14 +372,14 @@ Let $`P_{\mathrm{col}}^{(r)}(t;p)`$ be the probability of an $`r`$-fold collisio
 \overline s\le P_{\mathrm{col}}^{(r)}(t;p)
 \le\binom tr S_r.
 }
-\tag{12}
+\qquad\text{(12)}
 ```
 
 Thus average success at least $`s_0\gt 0`$ requires
 
 ```math
 t\ge(r!s_0)^{1/r}R.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 For an exact protocol with averaged expected cost $`\overline T`$, one has, for every $`t\ge0`$,
@@ -394,7 +394,7 @@ and hence, if $`\overline s\gt 0`$,
 \overline T\ge
 \frac{\overline s}{2}
 \left(\frac{r!\overline s}{2}\right)^{1/r}R.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 These bounds hold even when only the average success or average expected cost over the phase family is specified. They imply the corresponding worst-case phase bounds.

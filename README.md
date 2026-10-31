@@ -6,40 +6,40 @@ How many copies of an unknown quantum state are needed to square, cube, or other
 
 For an arbitrary unknown pure state in a known basis,
 
-$$
+```math
 |\alpha\rangle=\sum_{i=1}^{N}\alpha_i|i\rangle,
-$$
+```
 
 the target is
 
-$$
+```math
 |\alpha^{[r]}\rangle
 =\frac{\sum_i\alpha_i^r|i\rangle}{\sqrt{S_r}},
 \qquad
 S_r=\sum_i|\alpha_i|^{2r},
 \qquad r\ge2.
-$$
+```
 
 A collective collision extractor produces this state exactly on heralded success in the ideal gate model. Its adaptive algorithm consumes
 
-$$
+```math
 O_r(S_r^{-1/r})
-$$
+```
 
 copies in expectation, including calibration and failed trials. No knowledge of the collision moment is required.
 
 The optimal worst-case scale is
 
-$$
+```math
 \boxed{\Theta_r(N^{1-1/r}).}
-$$
+```
 
-The lower bound already holds for flat magnitudes with arbitrary continuous phases and allows arbitrary collective processing, constant success, and constant-quality approximate output.
+A finite schedule attains this order with a hard copy budget and constant success. The lower bound already holds for flat magnitudes with arbitrary continuous phases and permits arbitrary collective processing and approximate output. For example, it applies to success at least $`1/2`$ and conditional target fidelity at least $`3/4`$ on every input, with fidelity defined as the population of the target pure state.
 
 | Operation | Independent equality-postselection trials | Optimal collective copies |
 |---|---:|---:|
-| Square the amplitudes | $\Theta(N)$ | $\Theta(\sqrt N)$ |
-| Cube the amplitudes | $\Theta(N^2)$ | $\Theta(N^{2/3})$ |
+| Square the amplitudes | $`\Theta(N)`$ | $`\Theta(\sqrt N)`$ |
+| Cube the amplitudes | $`\Theta(N^2)`$ | $`\Theta(N^{2/3})`$ |
 
 These are worst-case scalings for fixed power. The input consists of supplied copies; preparation unitaries, their inverses, source reflections, amplitude oracles, and QRAM are not supplied.
 
@@ -59,7 +59,15 @@ A classical first-collision pilot selects the scale of a fresh coherent batch. A
 - [Interpretation](science/interpretation.md): effective support, coherent output and the limits of the result.
 - [Related work and bibliography](references/RELATED_WORK.md): inherited constructions and precise access-model comparisons.
 
-The [science entrypoint](science/README.md) connects these pages into a proof route.
+The [science entrypoint](science/README.md) connects these pages into a proof route. The profile-dependent optimality statement is exact and minimax over arbitrary phases at a fixed nontrivial amplitude profile. The robust approximate-output optimality statement is worst-case.
+
+## Learn the project
+
+The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. The [Watrous bridge](learning/WATROUS_BRIDGE.md) connects the relevant sections of the [author's available manuscript](https://jhwatrous.github.io/TQI.pdf) to the project's state, channel, symmetric-subspace and fidelity arguments, and translates the conventions used here.
+
+The [30-milestone map](learning/MILESTONES.md) provides a common route through the complete contribution. Its **11 background/preliminaries milestones** establish the operational and probabilistic framework. Its **19 narrative/innovation milestones** connect exact coherent extraction, unknown-moment adaptation, the robust converse and the charged implementation. Each milestone identifies its question, understanding target, earlier dependencies, conceptual connection and scientific references.
+
+Use the bridge alongside the milestones for self-directed study. [The LLM reading guide](llms.txt) maps scientific questions and study topics to their authoritative files. The direct proof route above remains available independently of the learning sequence.
 
 ## Reproduce the finite checks
 
@@ -73,7 +81,7 @@ The checks cover Kraus validity and exact factorization for finite complex input
 
 ## Scope and attribution
 
-The power is fixed, the inputs are identical pure states, and the circuit assumes the stated connectivity and explicit collective storage. Exactness concerns ideal known rotations; finite universal gate synthesis has a quantified conditional output error. The gate analysis specifies a circuit construction and credits the inherited symmetrizer; the verification suite is not an end-to-end gate compiler or hardware experiment.
+The power is fixed, the inputs are identical pure states in a specified basis, and the circuit assumes the stated connectivity and explicit collective storage. Expected instance copy cost does not impose a deterministic instance-sized peak-memory cap; the implementation accounts for the realized batch. Exactness concerns ideal known rotations; finite universal gate synthesis has a quantified conditional output error. The gate analysis specifies a circuit construction and credits the inherited symmetrizer; the verification suite is not an end-to-end gate compiler or hardware experiment.
 
 Exact nonlinear powers and several collision, covariance and filtering methods are established prior work. A Fourier-support promise can already make some supplied-copy products easy. The result here is the universal arbitrary-amplitude construction and its optimal worst-case copy law. It does not assert optimality for every specially promised family or a generic application-level quantum speedup.
 
