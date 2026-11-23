@@ -52,6 +52,6 @@ Given copies of $`|\psi_\theta\rangle`$, a fixed depolarizing channel can supply
 t\geq \bigl(r!s_0[a-\epsilon/(1-1/N)]\bigr)^{1/r}N^{1-1/r}.
 ```
 
-For fixed $`0<\epsilon<a`$, the order holds at sufficiently large $`N`$. For $`\epsilon\geq a(1-1/N)`$, the fixed output $`I/N`$ already meets the tolerance for every phase in this family. This distinguishes the effect of retained coherence from the density operator's rank.
+For fixed $`0\lt\epsilon\lt a`$, the order holds at sufficiently large $`N`$. For $`\epsilon\geq a(1-1/N)`$, the fixed output $`I/N`$ already meets the tolerance for every phase in this family. This distinguishes the effect of retained coherence from the density operator's rank.
 
 The entrywise operation and the baseline $`r`$-copy equality postselection are prior work. See [Bechmann-Pasquinucci, Huttner and Gisin, 1998](https://arxiv.org/abs/quant-ph/9708040) and [Holmes et al., 2023, §II C](https://doi.org/10.1103/PhysRevResearch.5.013105). The joint result is the exact collective mixed-copy law and its comparison with reversible purification access for the same output.

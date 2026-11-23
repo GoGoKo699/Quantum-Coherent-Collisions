@@ -290,7 +290,7 @@ Some pilot transcripts produce block sizes with very small ideal success probabi
 Instead, average over the classical pilot before normalizing the successful output. Let $`A`$ and $`\widetilde A`$ denote the ideal and synthesized subnormalized successful output states for a complete trial. Uniform circuit error $`\delta`$ implies
 
 ```math
-\|A-\widetilde A\|_1\le2\delta,\qquad
+\Vert A-\widetilde A\Vert_1\le2\delta,\qquad
 |\mathrm{Tr}A-\mathrm{Tr}\widetilde A|
 \le2\delta.
 ```

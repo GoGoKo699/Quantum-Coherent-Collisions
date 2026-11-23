@@ -29,7 +29,7 @@ Use Appendix B.2 for probability conventions, then follow the local occupancy ar
 Read §15.1 for measurement on a density matrix and Appendix A.5 for singular values. The project uses the conventions
 
 ```math
-D(\sigma,\tau)=\tfrac12\|\sigma-\tau\|_1,\qquad
+D(\sigma,\tau)=\tfrac12\Vert\sigma-\tau\Vert_1,\qquad
 F_{\beta}(\sigma)=\langle\beta|\sigma|\beta\rangle
 ```
 

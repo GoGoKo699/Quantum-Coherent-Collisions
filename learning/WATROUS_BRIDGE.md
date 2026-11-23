@@ -61,7 +61,7 @@ The basis is specified and $`r`$ is fixed. The source gives copies of $`|\alpha\
 Let $`\beta=|\alpha^{[r]}\rangle\langle\alpha^{[r]}|`$. Watrous Definition 3.11 and Proposition 3.13 give
 
 ```math
-F_{\mathrm W}(\rho,\tau)=\|\sqrt{\rho}\sqrt{\tau}\|_1,
+F_{\mathrm W}(\rho,\tau)=\Vert\sqrt{\rho}\sqrt{\tau}\Vert_1,
 \qquad
 F_{\mathrm W}(\rho,\beta)^2
 =\langle\alpha^{[r]}|\rho|\alpha^{[r]}\rangle.
@@ -83,7 +83,7 @@ F_\alpha=\frac{w_\alpha}{s_\alpha}
 
 Thus $`w_\alpha=s_\alpha F_\alpha`$, while Watrous fidelity of the subnormalized operator satisfies $`F_{\mathrm W}(\sigma_\alpha,\beta)=\sqrt{w_\alpha}`$. These quantities must not be interchanged.
 
-The project uses trace distance $`D(\rho,\tau)=\tfrac12\|\rho-\tau\|_1`$. Theorem 3.33 translates to
+The project uses trace distance $`D(\rho,\tau)=\tfrac12\Vert\rho-\tau\Vert_1`$. Theorem 3.33 translates to
 
 ```math
 1-\sqrt{F_\alpha}
@@ -428,7 +428,7 @@ The run position and length can be recomputed from the output label and the rema
 A finite universal gate set generally approximates the ideal rotations. Let $`A`$ and $`\widetilde A`$ be the ideal and compiled **subnormalized** successful output states, averaged over the pilot. Suppose each realized batch circuit is approximated uniformly well enough that
 
 ```math
-\|A-\widetilde A\|_1\le2\delta.
+\Vert A-\widetilde A\Vert_1\le2\delta.
 ```
 
 Writing $`s=\mathrm{Tr}A\ge p_\star`$ and $`\widetilde s=\mathrm{Tr}\widetilde A`$, trace-norm contraction and normalization give
