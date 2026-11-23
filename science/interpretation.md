@@ -48,15 +48,13 @@ The gain in copy consumption uses collective quantum storage and processing of a
 
 There is no contradiction with linear quantum mechanics: the unnormalized success map is completely positive and linear on the joint input density operator. The normalized output is nonlinear in the single-copy amplitudes because the input contains several copies and the protocol conditions on a heralded event.
 
-Likewise, this is not a direct comparison with the query complexity of algorithms supplied with stronger coherent preparation/reflection or block-encoding access. Those models expose operations that a finite collection of unknown copies does not supply for free.
+The [controlled-reflection](https://github.com/GoGoKo699/Quantum-Hadamard-Powers/blob/main/science/reflection_budget.md) and [forward-query](https://github.com/GoGoKo699/Quantum-Hadamard-Powers/blob/main/science/forward_only.md) analyses in Quantum Hadamard Powers state separate resource laws for executable source operations.
 
 ## Boundaries that affect use
 
 - **Basis choice:** the transformation is coordinatewise in a specified basis. Changing the basis changes the task and can change $`S_r`$.
-- **Purity and identical copies:** exact factorization uses the tensor power of one pure state. An arbitrary mixed or drifting source is not covered.
+- **Independent copies:** the occupation argument assumes a pure input. The [ordered-rank circuit](mixed_states.md) also handles identical mixed states. Its formula uses the product density operator of the entire batch.
 - **Fixed degree:** constants include factorial and calibration factors depending on $`r`$. The proof does not promise favorable scaling for increasing degree.
 - **Success and accuracy:** ideal heralded outputs are exact. Finite synthesis gives approximate outputs with a quantified conditional error and still-counted failure probability.
 - **Memory and connectivity:** the circuit retains a realized batch and assumes the connectivity stated in the implementation. It is not a geometry-optimized architecture.
 - **Application output:** the resource law concerns a prepared quantum state. Any later observable estimation, readout, source preparation or application-level comparison requires its own analysis.
-
-These qualifications delimit a complete contribution. They are not evidence for extensions to mixed inputs, general two-source products or an unrestricted computational advantage.

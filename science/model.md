@@ -1,6 +1,6 @@
 # Model and principal results
 
-[Scientific route](README.md) · [Exact construction](coherent_extraction.md) · [Adaptive copies](unknown_moment.md) · [Converse](converse.md) · [Implementation](implementation.md)
+[Scientific route](README.md) · [Exact construction](coherent_extraction.md) · [Mixed-state powers](mixed_states.md) · [Adaptive copies](unknown_moment.md) · [Converse](converse.md) · [Implementation](implementation.md)
 
 ## The quantum output
 
@@ -76,6 +76,8 @@ For example, success at least $`1/2`$ and conditional fidelity at least $`3/4`$ 
 
 **Exact profile-minimax consequence.** If an amplitude profile $`p`$ is fixed and known but its relative phases are arbitrary, exact constant-success synthesis requires $`\Omega_r(S_r^{-1/r})`$ copies whenever the target has at least two nonzero coordinates. Together with the upper bound this gives an exact phase-minimax law. The qualifier is essential: an approximate target concentrated on a known basis state can be easy, and a specially promised phase or Fourier family need not contain the hard phase ensemble.
 
+**Mixed-state extension.** For independent copies of any density operator $`\rho`$, the [ordered-rank instrument](mixed_states.md) prepares the normalized entrywise power $`\rho^{\circ r}/S_r`$ exactly on success. Here $`S_r=\sum_i\rho_{ii}^r`$. The same pilot and geometric schedules give expected $`O_r(S_r^{-1/r})`$ and constant-success hard-budget $`O_r(N^{1-1/r})`$ copy guarantees. The pure-state subclass provides a matching worst-case lower bound at fixed, sufficiently small conditional trace error. A separate [full-rank family](mixed_states.md#full-rank-lower-bound-when-the-tolerance-resolves-coherence) retains the lower bound when accuracy resolves the remaining off-diagonal coherence.
+
 ## Baseline and scope
 
 Elementary equality postselection on exactly $`r`$ copies has success probability $`S_r`$. Independent repetition costs $`r/S_r`$ copies in expectation. Its worst-case cost is $`\Theta_r(N^{r-1})`$. The collective construction changes this to $`\Theta_r(N^{1-1/r})`$.
@@ -88,4 +90,4 @@ Elementary equality postselection on exactly $`r`$ copies has success probabilit
 
 This comparison concerns copy consumption for the specified coherent output. It does not establish an application-level speedup over classical computation or an improvement over a stronger oracle-query model. Nonlinear products/powers, covariance methods and several collision mechanisms are prior work; [related work](../references/RELATED_WORK.md) identifies the inherited results and the consequential distinction.
 
-The analysis assumes identical pure-state copies. It makes no noisy-source or arbitrary mixed-state claim, no growing-power guarantee, and no corresponding general theorem for products of two unrelated arbitrary-amplitude sources. Those tasks require separate analysis.
+The pure occupation argument uses a tensor power of one pure state. The ordered-rank result covers independent copies of one density operator. Correlated inputs, drifting sources, growing powers and products of unrelated arbitrary sources fall outside these theorems.
