@@ -32,7 +32,7 @@ The rank density-matrix entry is $`1/B_r`$, even if the ranks of $`J`$ differ in
 
 Its trace is $`\binom tr S_r Q_r(t-r,p)/B_r`$. Every successful output equals $`F_r(\rho)`$. The derivation uses $`\rho^{\otimes t}`$. A correlated or drifting source requires a different analysis.
 
-The rank erasure matters because rank can reveal the output label. The symmetric-occupation Kraus map in Coherent Collisions needs its original pure-input assumption. For instance, its symmetric projection and multiplicity correction at $`r=2,t=3`$, on $`\rho=\operatorname{diag}(4/5,1/5)`$, give unnormalized diagonal $`(208/375,7/375)`$, whereas $`F_2(\rho)=\operatorname{diag}(16/17,1/17)`$. The ordered-rank circuit operates on the full tensor-product space and also gives an exact noiseless implementation for the original pure-input task. The rank register uses Hadamard gates. Reversible sorting, routing, rank erasure and uncomputation act by known basis permutations and use $`O_r(t\,\mathrm{polylog}(Nt))`$ gates per attempt. A non-dyadic batch can use tagged inactive slots in the sorting network. Only the supplied slots enter the mark.
+The rank erasure matters because rank can reveal the output label. The symmetric-occupation Kraus map in Coherent Collisions needs its original pure-input assumption. For instance, its symmetric projection and multiplicity correction at $`r=2,t=3`$, on $`\rho=\mathrm{diag}(4/5,1/5)`$, give unnormalized diagonal $`(208/375,7/375)`$, whereas $`F_2(\rho)=\mathrm{diag}(16/17,1/17)`$. The ordered-rank circuit operates on the full tensor-product space and also gives an exact noiseless implementation for the original pure-input task. The rank register uses Hadamard gates. Reversible sorting, routing, rank erasure and uncomputation act by known basis permutations and use $`O_r(t\,\mathrm{polylog}(Nt))`$ gates per attempt. A non-dyadic batch can use tagged inactive slots in the sorting network. Only the supplied slots enter the mark.
 
 ## Copy and query consequences
 
@@ -52,6 +52,6 @@ Given copies of $`|\psi_\theta\rangle`$, a fixed depolarizing channel can supply
 t\geq \bigl(r!s_0[a-\epsilon/(1-1/N)]\bigr)^{1/r}N^{1-1/r}.
 ```
 
-For fixed $`0<\epsilon<a`$, the order holds at sufficiently large $`N`$. For $`\epsilon\geq a(1-1/N)`$, the fixed output $`I/N`$ already meets the tolerance for every phase in this family. This distinguishes the effect of retained coherence from the density operator's rank.
+For fixed $`0\lt\epsilon\lt a`$, the order holds at sufficiently large $`N`$. For $`\epsilon\geq a(1-1/N)`$, the fixed output $`I/N`$ already meets the tolerance for every phase in this family. This distinguishes the effect of retained coherence from the density operator's rank.
 
 The entrywise operation and the baseline $`r`$-copy equality postselection are prior work. See [Bechmann-Pasquinucci, Huttner and Gisin, 1998](https://arxiv.org/abs/quant-ph/9708040) and [Holmes et al., 2023, §II C](https://doi.org/10.1103/PhysRevResearch.5.013105). The joint result is the exact collective mixed-copy law and its comparison with reversible purification access for the same output.

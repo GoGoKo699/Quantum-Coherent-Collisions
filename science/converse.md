@@ -244,7 +244,7 @@ For a deterministic processor, $`s_\theta=1`$, and
 \overline F\le \frac1N+\left(1-\frac1N\right)P_{\mathrm{col}}^{(r)}(t;N).
 ```
 
-Trace distance is $`D(\rho,\tau)=\tfrac12\|\rho-\tau\|_1`$. For a pure target, measuring its projector gives
+Trace distance is $`D(\rho,\tau)=\tfrac12\Vert\rho-\tau\Vert_1`$. For a pure target, measuring its projector gives
 
 ```math
 1-\langle\beta|\rho|\beta\rangle

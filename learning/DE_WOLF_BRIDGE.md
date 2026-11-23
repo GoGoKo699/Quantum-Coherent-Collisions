@@ -16,7 +16,7 @@ The power is applied to entries, so the chosen basis is part of the problem. The
 
 ## 2. A successful map and its residual
 
-Use §§1.2.2–1.2.3, §15.1 and §18.3. For a measurement with a success flag, keep the accepted operator $`\sigma`$ before normalization. Its trace is the success probability. The conditional state is $`\sigma/\operatorname{Tr}(\sigma)`$ on trials with positive success probability.
+Use §§1.2.2–1.2.3, §15.1 and §18.3. For a measurement with a success flag, keep the accepted operator $`\sigma`$ before normalization. Its trace is the success probability. The conditional state is $`\sigma/\mathrm{Tr}(\sigma)`$ on trials with positive success probability.
 
 In the occupation instrument, an accepted residual factors from the pure powered state. In the ordered instrument, two basis tuples with the same residual and selected positions can contribute to an off-diagonal entry of the mixed output. The rank may differ between those two tuples. Recomputing and clearing it restores the shared environment needed for their off-diagonal entry to survive the partial trace. [Pure-state factorization](../science/coherent_extraction.md#lemma-2-every-accepted-residual-gives-the-same-exact-target) · [Ordered mixed extraction](../science/mixed_states.md#exact-mixed-copy-extraction)
 
@@ -29,7 +29,7 @@ Use Appendix B.2 for probability conventions, then follow the local occupancy ar
 Read §15.1 for measurement on a density matrix and Appendix A.5 for singular values. The project uses the conventions
 
 ```math
-D(\sigma,\tau)=\tfrac12\|\sigma-\tau\|_1,\qquad
+D(\sigma,\tau)=\tfrac12\Vert\sigma-\tau\Vert_1,\qquad
 F_{\beta}(\sigma)=\langle\beta|\sigma|\beta\rangle
 ```
 

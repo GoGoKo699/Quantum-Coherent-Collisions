@@ -37,8 +37,8 @@ v=\psi\circ\phi,\qquad \widetilde v=\psi\circ\phi_W,
 ```
 then
 ```math
-\left\|\frac{v}{\|v\|}-\frac{\widetilde v}{\|\widetilde v\|}\right\|
-\le \frac{2\|\psi\|_\infty\|\phi-\phi_W\|}{\|v\|},
+\left\Vert\frac{v}{\Vert v\Vert}-\frac{\widetilde v}{\Vert\widetilde v\Vert}\right\Vert
+\le \frac{2\Vert\psi\Vert_\infty\Vert\phi-\phi_W\Vert}{\Vert v\Vert},
 ```
 whenever the normalized vectors are defined. Approximation thus requires controlling both the tail and the product normalization.
 
