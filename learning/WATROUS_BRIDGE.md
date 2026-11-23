@@ -1,14 +1,16 @@
 # From Watrous to coherent collision powers
 
+For the current learning route shared with Quantum Hadamard Powers, start with the [de Wolf bridge](DE_WOLF_BRIDGE.md). This supplementary guide follows the pure-state derivation.
+
 A source supplies identical copies of an unknown pure quantum state. The task is to combine those copies into a new state whose amplitudes are the original amplitudes raised to a fixed integer power. The output must retain the corresponding relative phases. Its computational-basis distribution alone is insufficient.
 
-The selected educational anchor is **John Watrous, _The Theory of Quantum Information_ (2018)**. Section and theorem numbers below refer to the author's [complete 2018 prepublication manuscript](https://jhwatrous.github.io/TQI.pdf), with front matter dated January 2018; the [author's book page](https://jhwatrous.github.io/books-and-courses.html) identifies the published book. The manuscript is linked, not reproduced here.
+This supplementary background guide follows **John Watrous, _The Theory of Quantum Information_ (2018)**. Section and theorem numbers below refer to the author's [complete 2018 prepublication manuscript](https://jhwatrous.github.io/TQI.pdf), with front matter dated January 2018; the [author's book page](https://jhwatrous.github.io/books-and-courses.html) identifies the published book. The manuscript is linked, not reproduced here.
 
 Watrous supplies the language of states, physical maps, measurements, fidelity, and symmetric subspaces. This bridge develops the connections to the particular extraction, stopping rule, circuit, and converse in this project. The [30-milestone map](MILESTONES.md) has **11 background milestones and 19 narrative milestones**. Its background joins local objects into the operational model; its narrative joins the extraction, resource analysis, and converse into the complete result. These are understanding targets for the science, independent of any reader's prior assessment.
 
 The [model](../science/model.md) owns the exact promises and theorem statements. The [related-work account](../references/RELATED_WORK.md) distinguishes the contribution from its research antecedents.
 
-## 1. Focused readings from the single anchor
+## 1. Focused readings from Watrous
 
 The relevant sections are lookups within one source. They support the scientific route without requiring the entire book as a prerequisite.
 
@@ -559,7 +561,7 @@ Together these establish expected exact copy cost $`O_r(S_r^{-1/r})`$ in the ide
 
 | Ingredient | Source of the ingredient | Where the full account lives |
 |---|---|---|
-| States, partial traces, CP/Kraus/Choi maps, measurements, fidelity, symmetric occupations | Watrous, the single educational anchor | The precise sections in the reading table |
+| States, partial traces, CP/Kraus/Choi maps, measurements, fidelity, symmetric occupations | Watrous, supplementary background | The precise sections in the reading table |
 | Nonlinear target and elementary equality postselection | Prior nonlinear-transform and quantum Bernoulli-factory work | [Related work](../references/RELATED_WORK.md#nonlinear-filters-qubits-and-implementation) |
 | Multiplicity-corrected extraction and exact residual decoupling | The construction proved in this project | [Coherent extraction](../science/coherent_extraction.md) |
 | Unknown-moment pilot and charged expected consumption | The calibration argument proved in this project | [Unknown moment](../science/unknown_moment.md) |

@@ -130,6 +130,69 @@ def check_instrument(alpha, t, r):
     }
 
 
+def check_mixed_extraction(rho, t, r):
+    """Enumerate marked tuples and trace matched position and residual records."""
+    dimension = len(rho)
+    rank_count = 1 << (math.comb(2 * r - 1, r) - 1).bit_length()
+    subsets = [
+        (positions, tuple(index for index in range(t) if index not in positions))
+        for positions in itertools.combinations(range(t), r)
+    ]
+    groups = defaultdict(list)
+    for labels in itertools.product(range(dimension), repeat=t):
+        rank = 0
+        for positions, complement in subsets:
+            label = labels[positions[0]]
+            residual = tuple(labels[index] for index in complement)
+            if (any(labels[index] != label for index in positions[1:])
+                    or max(Counter(residual).values(), default=0) >= r):
+                continue
+            groups[positions, residual].append((label, labels, rank))
+            rank += 1
+        require(rank <= rank_count, "Too many admissible ranks")
+
+    output = [[0j] * dimension for _ in range(dimension)]
+    rank_retained = [[0j] * dimension for _ in range(dimension)]
+    for branches in groups.values():
+        for (left, x, rank_x), (right, y, rank_y) in itertools.product(branches, repeat=2):
+            element = math.prod(rho[i][j] for i, j in zip(x, y)) / rank_count
+            output[left][right] += element
+            if rank_x == rank_y:
+                rank_retained[left][right] += element
+
+    diagonal = tuple(rho[i][i].real for i in range(dimension))
+    factor = math.comb(t, r) * q_by_strings(diagonal, t - r, r) / rank_count
+    formula_error = max(
+        abs(output[i][j] - factor * rho[i][j] ** r)
+        for i in range(dimension) for j in range(dimension)
+    )
+    rank_leak_error = max(
+        abs(output[i][j] - rank_retained[i][j])
+        for i in range(dimension) for j in range(dimension)
+    )
+    require(formula_error < TOL, "Mixed ordered-rank extraction identity fails")
+    return {
+        "N": dimension, "t": t, "r": r, "formula_error": formula_error,
+        "rank_leak_error": rank_leak_error,
+    }
+
+
+def check_mixed_cases():
+    cases = []
+    for dimension, t, r in [(2, 3, 2), (3, 4, 2), (4, 5, 2), (3, 5, 3), (4, 6, 3)]:
+        vector = normalize([(i + 1) * cmath.exp(0.731j * i) for i in range(dimension)])
+        # A positive identity component makes each input full rank.
+        rho = [
+            [0.78 * x * y.conjugate() + (0.22 / dimension if i == j else 0)
+             for j, y in enumerate(vector)]
+            for i, x in enumerate(vector)
+        ]
+        cases.append(check_mixed_extraction(rho, t, r))
+    require(all(case["rank_leak_error"] > TOL for case in cases),
+            "Mixed cases do not detect residual rank leakage")
+    return cases
+
+
 def check_extraction():
     cases = 0
     for n_dim in range(2, 5):
@@ -319,20 +382,24 @@ def run():
                   (0.7, 0.3, 0.0), (0.25, 0.25, 0.25, 0.25)]
         for r in range(2, 5)
     ]
+    mixed = check_mixed_cases()
     counterexample = check_unweighted_counterexample()
     return {
         "status": "pass",
-        "scope": "finite algebra, ordered-sample identities, reversible list maps, "
+        "scope": "finite algebra, ordered-sample identities, mixed rank erasure, reversible list maps, "
                  "charge bounds, pilot stopping laws, and accuracy counterexample",
-        "counts": {"power_cases": len(power), "extraction_cases": extraction_cases,
+        "counts": {"power_cases": len(power), "mixed_cases": len(mixed), "extraction_cases": extraction_cases,
                    "charge_maps": len(charge), "pilot_laws": len(pilot)},
         "maximum_branch_error": max(x["branch_error"] for x in power),
         "maximum_density_error": max(x["density_error"] for x in power),
         "maximum_formula_error": max(x["formula_error"] for x in power),
         "maximum_ordered_sample_error": max(x["ordered_sample_error"] for x in power),
+        "maximum_mixed_formula_error": max(x["formula_error"] for x in mixed),
+        "minimum_detected_rank_leak_error": min(x["rank_leak_error"] for x in mixed),
         "minimum_charge_bound_slack": min(x["gap"] for x in charge),
         "counterexample": counterexample,
         "power_cases": power,
+        "mixed_cases": mixed,
         "pilot_laws": pilot,
         "limits": ["No numerical proof of asymptotic bounds",
                    "No end-to-end gate-level execution of the inherited symmetrizer",
@@ -348,5 +415,5 @@ if __name__ == "__main__":
     if args.json:
         args.json.write_text(json.dumps(report, indent=2) + "\n")
     summary = {key: value for key, value in report.items()
-               if key not in {"power_cases", "pilot_laws"}}
+               if key not in {"power_cases", "mixed_cases", "pilot_laws"}}
     print(json.dumps(summary, indent=2))

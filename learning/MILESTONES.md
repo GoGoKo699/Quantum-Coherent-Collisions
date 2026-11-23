@@ -2,11 +2,11 @@
 
 This map organizes coherent Hadamard powers from supplied quantum copies into exactly **30 milestones**. It describes the project's understanding targets for any reader, including an LLM. Its allocation and dependencies are determined by the science rather than by an individual's prior knowledge.
 
-The allocation is **11 background/preliminaries milestones** and **19 narrative/innovation milestones**. The background develops one connected framework: states and registers, physical successful maps, probability, symmetry, and charged implementation. The narrative needs more space because exact coherent extraction, adaptation to an unknown moment, and a robust converse are separate arguments that must be joined. Circuit realization, finite precision, and promise-sensitive attribution are part of that joined account.
+The allocation is **11 background/preliminaries milestones** and **19 narrative/innovation milestones**. The background develops one connected framework: states and registers, physical successful maps, probability, symmetry, and charged implementation. The narrative needs more space because exact extraction for pure and mixed states, adaptation to an unknown moment, and a robust converse are separate arguments that must be joined. Circuit realization, finite precision, and promise-sensitive attribution are part of that joined account.
 
 Both phases proceed from local objects and mechanisms toward global understanding. M11 assembles the operational question from the prerequisites. M28–M30 assemble the construction, converse, physical resources, and scope into the scientific contribution. The map does not attempt to reproduce every lemma or cover every neighboring subject; the scientific pages remain authoritative for complete statements and proofs.
 
-The **single educational anchor** is John Watrous, *The Theory of Quantum Information* (2018). Section numbers below refer to the author's [complete manuscript](https://jhwatrous.github.io/TQI.pdf), whose version and notation are recorded in the [Watrous bridge](WATROUS_BRIDGE.md). The bridge distinguishes textbook foundations from local derivations and imported research algorithms. Research references attached to the science provide attribution, not additional educational anchors.
+The educational anchor is Ronald de Wolf’s [*Quantum Computing: Lecture Notes*, version 6](https://arxiv.org/abs/1907.09415v6). The [de Wolf bridge](DE_WOLF_BRIDGE.md) explains where the notes enter the route and points to the local derivations.
 
 ## Route through the project
 
@@ -33,19 +33,19 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** A classical distribution does not determine a pure quantum state. Producing samples from the powered distribution therefore does not establish production of the coherent powered state.
 
-**Sources.** Watrous §§1.1.1 and 2.1.2; [the quantum output](../science/model.md#the-quantum-output); [two-level example](../science/interpretation.md#a-two-level-example).
+**Sources.** De Wolf §§1.2.1–1.2.2 and 15.1; [the quantum output](../science/model.md#the-quantum-output); [two-level example](../science/interpretation.md#a-two-level-example).
 
 ### M02 Independent copies and the access model
 
 **Central question.** What does the source supply, and which operations does it leave unavailable?
 
-**Understanding target.** Interpret $`|\alpha\rangle^{\otimes t}`$ as independent preparations of the same unknown pure state. Separate register dimension from copy count. Distinguish possessed state registers from executable preparation, inverse-preparation, reflection, or amplitude oracles.
+**Understanding target.** Interpret $`\rho^{\otimes t}`$ as independent preparations of one density operator, with $`|\alpha\rangle^{\otimes t}`$ describing the pure-state special case. Separate register dimension from copy count. Distinguish possessed state registers from executable preparation, inverse-preparation, reflection, or amplitude oracles.
 
 **Dependencies and story role.** M01. The local state becomes a precisely specified computational input.
 
 **Conceptual connection.** An operation may be easy with a preparation circuit while remaining costly with supplied copies. Initial information independent of the unknown source is different from an extra source-dependent quantum program.
 
-**Sources.** Watrous §§1.1.2 and 2.1.1–2.1.2; [input and resource conventions](../science/model.md); [a resource tradeoff](../science/interpretation.md#a-resource-tradeoff-not-a-free-source).
+**Sources.** De Wolf §1.3 and Appendix A.6; [input and resource conventions](../science/model.md); [a resource tradeoff](../science/interpretation.md#a-resource-tradeoff-not-a-free-source).
 
 ### M03 Positive maps and Kraus admissibility
 
@@ -57,7 +57,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** Linearity applies to the joint input density operator. Normalizing a heralded output can produce a nonlinear function of the single-copy amplitudes without modifying quantum mechanics.
 
-**Sources.** Watrous §§1.1.3 and 2.2.1–2.2.2; [admissibility of the success map](../science/coherent_extraction.md#lemma-1-the-success-map-is-physically-admissible); [interpretation of postselection](../science/interpretation.md#a-resource-tradeoff-not-a-free-source).
+**Sources.** De Wolf §§1.2.2–1.2.3 and 15.1 for the measurement model; [admissibility of the success map](../science/coherent_extraction.md#lemma-1-the-success-map-is-physically-admissible); [interpretation of postselection](../science/interpretation.md#a-resource-tradeoff-not-a-free-source).
 
 ### M04 Heralds and subnormalized outputs
 
@@ -69,7 +69,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** A rare accurate branch is not a high-success algorithm. Combining classical branches requires adding their subnormalized states before normalizing the accepted ensemble.
 
-**Sources.** Watrous §§2.3.1–2.3.2; [correctness conventions](../science/model.md#charged-resources-and-correctness); [successful-map definitions](../science/converse.md#1-definitions-and-the-hard-budget-theorem).
+**Sources.** De Wolf §§1.2.2 and 15.1; [correctness conventions](../science/model.md#charged-resources-and-correctness); [successful-map definitions](../science/converse.md#1-definitions-and-the-hard-budget-theorem).
 
 ### M05 Residual systems and coherent cleanup
 
@@ -81,19 +81,19 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** Erasing a computational record coherently is different from ignoring it. The final factorization proof, rather than the apparent classical irrelevance of the record, licenses disposal.
 
-**Sources.** Watrous §§2.1.3 and 2.3.2; [exact target factorization](../science/coherent_extraction.md#lemma-2-every-accepted-residual-gives-the-same-exact-target); [why the residual can be discarded](../science/implementation.md#5-why-the-residual-can-be-discarded).
+**Sources.** De Wolf §18.3 and §2.1.2; [exact target factorization](../science/coherent_extraction.md#lemma-2-every-accepted-residual-gives-the-same-exact-target); [why the residual can be discarded](../science/implementation.md#5-why-the-residual-can-be-discarded).
 
 ### M06 Fidelity distance and conventions
 
 **Central question.** What does it mean for a heralded quantum output to be accurate?
 
-**Understanding target.** Distinguish half-trace distance from pure-target overlap. Watrous uses root fidelity, whereas the project uses its square for a pure target: $`F_{\mathrm W}(\rho,|\beta\rangle\langle\beta|)^2=\langle\beta|\rho|\beta\rangle`$. Interpret successful overlap as probability times this conditional overlap, and understand why normalization can amplify a small unnormalized error.
+**Understanding target.** Distinguish half-trace distance from the pure-target population $`\langle\beta|\rho|\beta\rangle`$, which is the fidelity convention here. Interpret successful overlap as probability times this conditional overlap, and understand why normalization can amplify a small unnormalized error.
 
 **Dependencies and story role.** M04–M05. Accuracy becomes compatible with the successful-map convention needed later.
 
 **Conceptual connection.** A statement about an aggregate accepted output, an individual branch, and a success-weighted average are different statements. The root-versus-square convention must be translated before comparing formulas.
 
-**Sources.** Watrous §3.2, especially §§3.2.1 and 3.2.3, and §3.1.1; [accuracy quantifiers](../science/converse.md#3-hard-budget-consequences-and-accuracy-quantifiers); [finite heralding error](../science/implementation.md#7-finite-universal-synthesis-and-heralding-error).
+**Sources.** De Wolf §15.1 and Appendix A.5; [accuracy quantifiers](../science/converse.md#3-hard-budget-consequences-and-accuracy-quantifiers); [finite heralding error](../science/implementation.md#7-finite-universal-synthesis-and-heralding-error).
 
 ### M07 Symmetric occupations and multiplicities
 
@@ -105,7 +105,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** Equal amplitudes within an occupation class do not justify sorting and discarding permutation information. Normalized orbit states and clean auxiliary registers must both be preserved.
 
-**Sources.** Watrous §7.1.1 and §1.1.2; [occupations retain the phases](../science/coherent_extraction.md#occupations-retain-the-phases); [compression normalization](../science/implementation.md#normalization-and-reversibility).
+**Sources.** De Wolf Appendix A.6 for tensor powers; [occupations retain the phases](../science/coherent_extraction.md#occupations-retain-the-phases); [compression normalization](../science/implementation.md#normalization-and-reversibility).
 
 ### M08 Collision probabilities and random budgets
 
@@ -117,7 +117,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** A hard cap, an expected cost, and a stopping-time distribution are separate resources. The Poisson embedding and renewal argument needed here are supplied in the project, rather than presumed from the textbook section.
 
-**Sources.** Watrous §1.2.2; [occupancy success identity](../science/coherent_extraction.md#exact-success-probability); [first-collision scale](../science/unknown_moment.md#the-first-collision-scale); [expected total consumption](../science/unknown_moment.md#expected-total-consumption-including-retries).
+**Sources.** De Wolf Appendix B.2; [occupancy success identity](../science/coherent_extraction.md#exact-success-probability); [first-collision scale](../science/unknown_moment.md#the-first-collision-scale); [expected total consumption](../science/unknown_moment.md#expected-total-consumption-including-retries).
 
 ### M09 Choi representations and symmetry averaging
 
@@ -129,7 +129,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** Averaging can preserve an appropriately chosen performance functional without making an implementability assumption about the original algorithm. The particular torus characters and charge blocks are derived locally in the project.
 
-**Sources.** Watrous §§2.2.2 and 7.2.1; [twirling reduction](../science/converse.md#21-twirl-the-unnormalized-successful-map); [charge decomposition](../science/converse.md#22-an-explicit-charge-decomposition).
+**Sources.** De Wolf §15.1 for states and effects; [twirling reduction](../science/converse.md#21-twirl-the-unnormalized-successful-map); [charge decomposition](../science/converse.md#22-an-explicit-charge-decomposition).
 
 ### M10 Known circuits and charged resources
 
@@ -139,21 +139,21 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Dependencies and story role.** M02–M06. This places physical implementation and accuracy within the same resource account.
 
-**Conceptual connection.** A sparse list of held labels avoids an uncharged table of amplitudes, while coherent addressing and cleanup still require actual gates. Watrous supplies the operator framework; the reversible circuit and synthesis accounting are project-specific developments and attributed imports.
+**Conceptual connection.** A sparse list of held labels avoids an uncharged table of amplitudes, while coherent addressing and cleanup still require actual gates. The notes supply the gate model. The charged reversible circuit and synthesis analysis are developed in the implementation chapter.
 
-**Sources.** Watrous §§2.2.2, 1.1.3, and 3.3.2–3.3.3; [gate, memory, and depth accounting](../science/implementation.md#6-gate-memory-and-depth-accounting); [finite synthesis](../science/implementation.md#7-finite-universal-synthesis-and-heralding-error).
+**Sources.** De Wolf §§1.4 and 2.1–2.2; [gate, memory, and depth accounting](../science/implementation.md#6-gate-memory-and-depth-accounting); [finite synthesis](../science/implementation.md#7-finite-universal-synthesis-and-heralding-error).
 
 ### M11 The complete operational question
 
 **Central question.** Which unknown-input task and which resource law does the project actually solve?
 
-**Understanding target.** Assemble supplied identical pure-state copies, a fixed coordinate basis, exact heralded quantum output, arbitrary source-independent processing, and charged failures into one model. Distinguish the universal upper bound, the robust worst-case lower bound, and the exact fixed-profile phase-minimax statement.
+**Understanding target.** Assemble independent copies of one state, a fixed coordinate basis, exact heralded quantum output, arbitrary source-independent processing, and charged failures into one model. Distinguish the universal upper bound, the robust worst-case lower bound, and the exact fixed-profile phase-minimax statement.
 
 **Dependencies and story role.** M06–M10, with M01–M05 supplying their foundations. This is the global synthesis of the background phase.
 
 **Conceptual connection.** Identify what changes when a preparation oracle, a Fourier promise, noise, a variable degree, or a classical-only output is supplied. The desired nonlinear output is compatible with a linear physical map on several copies.
 
-**Sources.** Watrous §§2.1–2.3 as the operational framework and §3.2 for accuracy; [model and principal results](../science/model.md); [meaning and limits](../science/interpretation.md).
+**Sources.** De Wolf §§1.2–1.4 and 15.1; [model and principal results](../science/model.md); [meaning and limits](../science/interpretation.md).
 
 ## Phase II: narrative/innovation
 
@@ -167,7 +167,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** Collective pooling changes the use of available copies; it does not introduce the nonlinear task or postselection for the first time.
 
-**Sources.** Watrous §2.3.2; [baseline and scope](../science/model.md#baseline-and-scope); [nonlinear-filter antecedents](../references/RELATED_WORK.md#nonlinear-filters-qubits-and-implementation).
+**Sources.** De Wolf §§1.2.2 and 15.1; [baseline and scope](../science/model.md#baseline-and-scope); [nonlinear-filter antecedents](../references/RELATED_WORK.md#nonlinear-filters-qubits-and-implementation).
 
 ### M13 A physically admissible collision instrument
 
@@ -179,7 +179,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** Completeness must hold simultaneously for all accepted occupations, not merely after averaging the intended source. Unique residual assignment prevents distinct success branches from overusing an input basis vector.
 
-**Sources.** Watrous §§2.2.2 and 1.1.3; [the universal instrument](../science/coherent_extraction.md#a-universal-instrument); [admissibility proof](../science/coherent_extraction.md#lemma-1-the-success-map-is-physically-admissible).
+**Sources.** De Wolf §§1.2.2–1.2.3 and 15.1 for the measurement model; [the universal instrument](../science/coherent_extraction.md#a-universal-instrument); [admissibility proof](../science/coherent_extraction.md#lemma-1-the-success-map-is-physically-admissible).
 
 ### M14 Factorial cancellation and exact decoupling
 
@@ -191,7 +191,7 @@ The **single educational anchor** is John Watrous, *The Theory of Quantum Inform
 
 **Conceptual connection.** The correction compensates for differing permutation multiplicities. Its purpose is to decouple the output from the residual, not simply to increase the probability of finding any repeated label.
 
-**Sources.** Watrous §§2.1.3 and 7.1.1; [factorial cancellation](../science/coherent_extraction.md#lemma-2-every-accepted-residual-gives-the-same-exact-target); [circuit factorization](../science/implementation.md#5-why-the-residual-can-be-discarded).
+**Sources.** De Wolf §18.3 and Appendix A.6; [factorial cancellation](../science/coherent_extraction.md#lemma-2-every-accepted-residual-gives-the-same-exact-target); [circuit factorization](../science/implementation.md#5-why-the-residual-can-be-discarded).
 
 ### M15 The exact success identity and collision scale
 
@@ -209,7 +209,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** Larger batches are not automatically better: additional collision labels can reduce eligibility. The useful scale balances a growing falling factorial against the no-residual-collision probability.
 
-**Sources.** Watrous §1.2.2 and §7.1.1; [exact success probability](../science/coherent_extraction.md#exact-success-probability); [constant success at the collision scale](../science/coherent_extraction.md#constant-success-at-the-collision-scale).
+**Sources.** De Wolf Appendix B.2; [exact success probability](../science/coherent_extraction.md#exact-success-probability); [constant success at the collision scale](../science/coherent_extraction.md#constant-success-at-the-collision-scale).
 
 ### M16 A finite geometric schedule
 
@@ -221,7 +221,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** The schedule does not need success to improve monotonically with batch size. Fresh inputs preserve the useful batch's conditional success probability after earlier failures.
 
-**Sources.** Watrous §1.2.2; [hard budget without knowing the moment](../science/coherent_extraction.md#a-hard-budget-without-knowing-the-moment); [worst-case result](../science/model.md#the-result-package).
+**Sources.** De Wolf Appendix B.2; [hard budget without knowing the moment](../science/coherent_extraction.md#a-hard-budget-without-knowing-the-moment); [worst-case result](../science/model.md#the-result-package).
 
 ### M17 The first collision as a pilot
 
@@ -233,7 +233,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** The pilot measures independent copies and leaves the fresh coherent block intact. A collision scale is sufficient; neither a phase estimate nor a complete distribution estimate is supplied.
 
-**Sources.** Watrous §1.2.2 for probability foundations; [pilot algorithm](../science/unknown_moment.md#algorithm); [first-collision proof](../science/unknown_moment.md#the-first-collision-scale); [constant trial success](../science/unknown_moment.md#a-constant-chance-of-an-exact-coherent-output). The Poisson argument is locally derived.
+**Sources.** De Wolf Appendix B.2 for probability conventions; [pilot algorithm](../science/unknown_moment.md#algorithm); [first-collision proof](../science/unknown_moment.md#the-first-collision-scale); [constant trial success](../science/unknown_moment.md#a-constant-chance-of-an-exact-coherent-output). The Poisson argument is locally derived.
 
 ### M18 Renewal without knowing the moment
 
@@ -245,7 +245,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** Independence is needed between fresh complete trials, not between cost and success within one trial. Expected instance cost does not imply a deterministic instance-sized copy or memory cap.
 
-**Sources.** Watrous §§1.2.2 and 2.3.2; [expected total consumption](../science/unknown_moment.md#expected-total-consumption-including-retries); [memory and stopping bounds](../science/unknown_moment.md#memory-gates-and-stopping-bounds).
+**Sources.** De Wolf Appendix B.2 and §1.2.2; [expected total consumption](../science/unknown_moment.md#expected-total-consumption-including-retries); [memory and stopping bounds](../science/unknown_moment.md#memory-gates-and-stopping-bounds).
 
 ### M19 A Boolean prefilter that preserves phases
 
@@ -257,7 +257,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** Measuring a Boolean eligibility flag differs from measuring the repeated label or its multiplicity. The prefilter restricts later compilation to bounded multiplicities without changing the successful map.
 
-**Sources.** Watrous §2.3.2 and §7.1.1; [Boolean eligibility circuit](../science/implementation.md#2-measure-only-a-boolean-eligibility-flag); [instrument domain](../science/implementation.md#1-instrument-to-implement).
+**Sources.** De Wolf §§1.2.2 and 2.1.2; [Boolean eligibility circuit](../science/implementation.md#2-measure-only-a-boolean-eligibility-flag); [instrument domain](../science/implementation.md#1-instrument-to-implement).
 
 ### M20 Clean compression with repeated labels
 
@@ -269,19 +269,19 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** A sorting record cannot simply be discarded. The bounded-run implementation includes preparation and erasure of its permutation resources; no free dimension-sized occupation table or quantum-specified interval state is assumed.
 
-**Sources.** Watrous §7.1.1 for symmetric-space foundations; [charged coherent compression](../science/implementation.md#3-charged-coherent-occupation-compression); [normalization and reversibility](../science/implementation.md#normalization-and-reversibility); [imported symmetrizer attribution](../references/RELATED_WORK.md#nonlinear-filters-qubits-and-implementation).
+**Sources.** De Wolf Appendix A.6 for the tensor-product setting; [charged coherent compression](../science/implementation.md#3-charged-coherent-occupation-compression); [normalization and reversibility](../science/implementation.md#normalization-and-reversibility); [imported symmetrizer attribution](../references/RELATED_WORK.md#nonlinear-filters-qubits-and-implementation).
 
-### M21 Coherent extraction and record erasure
+### M21 Coherent extraction, rank erasure and mixed inputs
 
-**Central question.** How does the sorted-list circuit realize the Kraus coefficients without recording which output label won?
+**Central question.** How do the occupation and ordered-rank circuits erase records that can reveal the output label?
 
-**Understanding target.** Follow the unique-run scan, controlled removal of $`r`$ repeated entries, positive multiplicity rotation, and reconstruction of the run's position and length from the residual and output. Explain why clearing those records realizes the same exact factorization as the mathematical instrument.
+**Understanding target.** Follow the occupation circuit from run scan to multiplicity rotation and cleanup. In the ordered-rank circuit, reconstruct the rank from the output label, selected positions and residual. Track paired tuples through partial trace to derive the surviving mixed-state entry.
 
 **Dependencies and story role.** M13–M14, M20. The local circuit components are joined into the complete coherent extractor.
 
-**Conceptual connection.** Reversible copying of a computational label within a basis map is not measurement. The final residual may be discarded because factorization has been proved, while the position and multiplicity records must be uncomputed.
+**Conceptual connection.** Reversible copying of a computational label within a basis map is not measurement. In the occupation proof the residual factors from the output. In the ordered proof, the two tuples in an off-diagonal matrix element can have different original ranks. Clearing the rank lets them contribute after partial trace.
 
-**Sources.** Watrous §§2.1.3 and 2.2.2; [sparse extraction and cleanup](../science/implementation.md#4-sparse-extraction-and-cleanup); [residual factorization](../science/implementation.md#5-why-the-residual-can-be-discarded).
+**Sources.** De Wolf §§2.1.2 and 18.3; [sparse extraction and cleanup](../science/implementation.md#4-sparse-extraction-and-cleanup); [residual factorization](../science/implementation.md#5-why-the-residual-can-be-discarded); [mixed-state extraction](../science/mixed_states.md#exact-mixed-copy-extraction).
 
 ### M22 Finite synthesis and total resource accounting
 
@@ -293,7 +293,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** A rare pilot transcript need not have a uniformly good conditional error bound. The proved aggregate trial success controls normalization; the success flag alone does not certify exact finite-gate output or hardware noise tolerance.
 
-**Sources.** Watrous §§1.1.3 and 3.3.2–3.3.3, with §2.3.2 for conditioning; [resource bounds](../science/implementation.md#6-gate-memory-and-depth-accounting); [aggregate synthesis error](../science/implementation.md#7-finite-universal-synthesis-and-heralding-error).
+**Sources.** De Wolf §2.2 and §15.1; [resource bounds](../science/implementation.md#6-gate-memory-and-depth-accounting); [aggregate synthesis error](../science/implementation.md#7-finite-universal-synthesis-and-heralding-error).
 
 ### M23 Twirling an unnormalized successful map
 
@@ -305,7 +305,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** The twirl is a proof reduction, not an assumed ability to learn the phases. The output representation encodes the specified powered target; changing it to a cloning target changes the problem.
 
-**Sources.** Watrous §§2.2.2 and 7.2.1; [unnormalized-map twirl](../science/converse.md#21-twirl-the-unnormalized-successful-map); [explicit charge decomposition](../science/converse.md#22-an-explicit-charge-decomposition).
+**Sources.** De Wolf §15.1 and Appendix A.6 for states and joint registers; [unnormalized-map twirl](../science/converse.md#21-twirl-the-unnormalized-successful-map); [explicit charge decomposition](../science/converse.md#22-an-explicit-charge-decomposition).
 
 ### M24 Charges convert coherence into collision weight
 
@@ -317,7 +317,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** Collision weight is bounded as an operator-supported resource, without measuring occupations or assuming a particular circuit. Accepted records and discarded systems do not evade the bound.
 
-**Sources.** Watrous §§1.1.3, 2.2.2, and 7.1.1; [negative charges](../science/converse.md#23-negative-charges-have-a-single-output-label); [collision-sector effect bound](../science/converse.md#24-nonnegative-charges-require-an-input-collision).
+**Sources.** De Wolf Appendices A.5–A.6 for operator and tensor-product notation; [negative charges](../science/converse.md#23-negative-charges-have-a-single-output-label); [collision-sector effect bound](../science/converse.md#24-nonnegative-charges-require-an-input-collision).
 
 ### M25 Weighted accuracy and the hard budget lower bound
 
@@ -329,7 +329,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** Normalizing each phase-dependent branch before averaging can overvalue accurate but unlikely outputs. The hard family has a trivial basis-measurement distribution, so its obstruction concerns the entire coherent output.
 
-**Sources.** Watrous §§2.3.2 and 3.2.1–3.2.3; [hard-budget consequences](../science/converse.md#3-hard-budget-consequences-and-accuracy-quantifiers); [unweighted-average counterexample](../science/converse.md#why-an-unweighted-conditional-average-is-insufficient).
+**Sources.** De Wolf §15.1 for measurement probabilities; [hard-budget consequences](../science/converse.md#3-hard-budget-consequences-and-accuracy-quantifiers); [unweighted-average counterexample](../science/converse.md#why-an-unweighted-conditional-average-is-insufficient).
 
 ### M26 Expected budgets without biased conditioning
 
@@ -341,7 +341,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** A cutoff can select less accurate branches. Tracking a linear score of subnormalized outputs handles that bias; asserting preservation of conditional fidelity would not.
 
-**Sources.** Watrous §1.2.2 and §2.3.2; [expected-budget theorem and proof](../science/converse.md#4-expected-copy-budgets-including-approximate-output); [adaptive upper guarantee](../science/unknown_moment.md#expected-total-consumption-including-retries).
+**Sources.** De Wolf Appendix B.2 and §15.1; [expected-budget theorem and proof](../science/converse.md#4-expected-copy-budgets-including-approximate-output); [adaptive upper guarantee](../science/unknown_moment.md#expected-total-consumption-including-retries).
 
 ### M27 Exact profile minimax and its boundary
 
@@ -353,7 +353,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** A positive sum with rank-one output constrains every accepted summand. A one-label profile is degenerate, and a concentrated powered target can be approximated by a known basis state even when the exact phase-sensitive task is costly.
 
-**Sources.** Watrous §§1.1.3 and 2.1.2–2.1.3; [exact profile-minimax theorem](../science/converse.md#5-exact-profile-minimax-lower-bound); [approximate-profile boundary](../science/converse.md#6-boundaries-of-the-claims).
+**Sources.** De Wolf §§1.2.1 and 18.3; [exact profile-minimax theorem](../science/converse.md#5-exact-profile-minimax-lower-bound); [approximate-profile boundary](../science/converse.md#6-boundaries-of-the-claims).
 
 ### M28 The attained copy law and its resource cost
 
@@ -365,7 +365,7 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** Collective coherent storage enables the copy gain. A matching copy exponent neither implies optimal gate constants nor supplies an application-level advantage over classical computation or a stronger oracle model.
 
-**Sources.** Watrous §§2.1–2.3 and 3.3 as the operational framework; [principal result package](../science/model.md#the-result-package); [charged implementation](../science/implementation.md); [resource interpretation](../science/interpretation.md#a-resource-tradeoff-not-a-free-source).
+**Sources.** De Wolf §§1.2, 2.2 and 15.1; [principal result package](../science/model.md#the-result-package); [charged implementation](../science/implementation.md); [resource interpretation](../science/interpretation.md#a-resource-tradeoff-not-a-free-source).
 
 ### M29 Attribution promises and verification
 
@@ -377,16 +377,16 @@ Relate the residual sum to a classical multinomial probability. Use the union bo
 
 **Conceptual connection.** A source's headline oracle model may hide a circuit that also works on copies; conversely, possessing a state does not furnish its preparation inverse. Neither a finite pilot histogram nor small numerical checks establish an exact global promise or an asymptotic proof.
 
-**Sources.** Watrous §2.2.2 for operational representations and §7.1.1 for occupation foundations; [related work](../references/RELATED_WORK.md), especially [the Fourier-support predecessor](../references/RELATED_WORK.md#an-exact-fourier-support-predecessor) and [collision/covariance antecedents](../references/RELATED_WORK.md#collision-and-covariance-antecedents); [verification scope](../verification/README.md). The textbook does not supply the project-specific literature comparison.
+**Sources.** De Wolf §§1.4, 2.1.2 and 15.1 for the circuit and measurement models; [related work](../references/RELATED_WORK.md), especially [the Fourier-support predecessor](../references/RELATED_WORK.md#an-exact-fourier-support-predecessor) and [collision/covariance antecedents](../references/RELATED_WORK.md#collision-and-covariance-antecedents); [verification scope](../verification/README.md). The textbook does not supply the project-specific literature comparison.
 
 ### M30 The complete scientific story
 
 **Central question.** What does coherent collision processing establish about nonlinear computation on unknown quantum data?
 
-**Understanding target.** Give one connected account from the supplied-state model through multiplicity-corrected exact extraction, unknown-moment adaptation, charged compilation, and phase-covariant necessity. Explain which resource law is attained, which uncertainty makes it necessary, and why fixed degree, pure iid inputs, a specified basis, success weighting, and coherent output remain load-bearing assumptions.
+**Understanding target.** Give one connected account from the supplied-state model through multiplicity-corrected exact extraction, unknown-moment adaptation, charged compilation, and phase-covariant necessity. Explain which resource law is attained, which uncertainty makes it necessary, and how fixed degree, independence, the chosen basis, success weighting, and coherent output enter the results.
 
 **Dependencies and story role.** M11, M28–M29. This is the global synthesis of the narrative and the complete map.
 
-**Conceptual connection.** Interpret a changed promise or resource and identify which theorem still applies. Preserve both parts of the result: the algorithm constructs a useful pure state, and the converse limits every processor in the specified copy model without claiming unrestricted computational or noise-tolerance advantages.
+**Conceptual connection.** Interpret a changed promise or resource and identify which theorem still applies. Explain how ordered extraction extends the copy law to mixed inputs and why the pure subclass still gives a worst-case lower bound. Compare the executable source operations in the sister repository with the supplied-copy model.
 
-**Sources.** Watrous §§2.1–2.3, 3.2, and 7.1.1 as the integrated foundation; [scientific route](../science/README.md); [model](../science/model.md); [meaning and limits](../science/interpretation.md); [attribution](../references/RELATED_WORK.md).
+**Sources.** De Wolf §§1.2, 2.1–2.2, 15.1 and 18.3; [scientific route](../science/README.md); [model](../science/model.md); [meaning and limits](../science/interpretation.md); [mixed-state powers](../science/mixed_states.md); [attribution and sister results](../references/RELATED_WORK.md).

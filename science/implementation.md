@@ -4,6 +4,8 @@ The collision extractor can be implemented with source-independent circuits on t
 
 The construction uses coherent symmetrization as an inherited subroutine, followed by reversible processing of a sparse sorted list. All copies, data registers, ancillary registers, and gates are charged. The circuit does not use a quantum RAM or an oracle for preparing, reversing, or reflecting about the unknown source state. See [RELATED_WORK.md](../references/RELATED_WORK.md) for attribution and comparisons.
 
+This page develops the pure-state occupation circuit. The [ordered-rank extension](mixed_states.md) gives a second exact route and applies to independent mixed inputs.
+
 ## 1. Instrument to implement
 
 Let

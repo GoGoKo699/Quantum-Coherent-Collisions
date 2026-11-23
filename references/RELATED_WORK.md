@@ -8,7 +8,7 @@ For a fixed integer $`r\ge2`$, the task is to consume supplied copies of an unkn
 ```
 and herald the normalized state proportional to $`\sum_i\alpha_i^r|i\rangle`$. The input model supplies no state-preparation circuit, inverse, reflection, or amplitude oracle. With $`S_r=\sum_i|\alpha_i|^{2r}`$, coherent collision powers gives an exact heralded collective transformation, expected copy cost $`O_r(S_r^{-1/r})`$ without knowing $`S_r`$, and worst-case copy complexity $`\Theta_r(N^{1-1/r})`$. The worst-case lower bound permits approximate outputs and arbitrary quantum channels.
 
-The relevant distinction is the collective resource law for arbitrary amplitudes. Exact nonlinear state products, postselection, covariant conversion, and occupation representations all have substantial antecedents. Moreover, structured promises can permit much cheaper transformations than the general bound. In particular, the Fourier construction below is already a supplied-copy algorithm under its support promise.
+The [ordered-rank extension](../science/mixed_states.md) gives the same collective law for independent copies of an arbitrary density matrix, with target $`\rho^{\circ r}/\sum_i\rho_{ii}^r`$. The relevant distinction is the collective resource law. Exact nonlinear state products, postselection, covariant conversion, and occupation representations all have substantial antecedents. Moreover, structured promises can permit much cheaper transformations than the general bound. In particular, the Fourier construction below is already a supplied-copy algorithm under its support promise.
 
 ## An exact Fourier-support predecessor
 
@@ -48,7 +48,7 @@ For unrestricted phases, exact Fourier support can fill all $`N`$ frequencies, s
 
 | Work | Operational task and access | Established ingredient | Relationship to coherent collision powers |
 | --- | --- | --- | --- |
-| Holmes et al. [HCSS23] | Copies of input states; postselected nonlinear transformations | Arbitrary pure-state products and repeated powers | Establishes the task and elementary filter; a single $`r`$-copy attempt succeeds with $`S_r`$. Collective pooling is the additional resource improvement. |
+| Holmes et al. [HCSS23] | Copies of input states; postselected nonlinear transformations | Entrywise density-matrix products and repeated powers | Establishes the task and elementary filter; a single $`r`$-copy attempt succeeds with $`S_r`$. Collective pooling is the additional resource improvement. |
 | Huang et al. [HNZM26] | Function/Fourier promises; a fixed two-copy circuit survives from the oracle formulation | Fourier convolution and support-window postselection | Gives an exact, sometimes constant-copy restricted-family predecessor, as detailed above. |
 | Rossi–Sarkar [RS26] | Unitary block-encoding access; controlled access for general polynomials | Efficient element-wise matrix powers and transforms | A block encoding is an executable operator, and its output normalization remains charged. It is not supplied-state access. |
 | Guo–Mitarai–Fujii [GMF24]; Rattew–Rebentrost [RR23] | State-preparation unitaries, controlled uses and adjoints | Nonlinear amplitudes through block encodings and QSVT | Direct amplitude-transform ancestors in a stronger access model. |
@@ -79,17 +79,17 @@ The contribution uses this established representation language to prove a task-s
 
 ## Nonlinear filters, qubits and implementation
 
-Holmes et al. §II.C, Figures 2–3 and Equations (7)–(12), implement Hadamard products and iterated powers through postselection [HCSS23]. Repeating disjoint $`r`$-copy attempts costs $`O_r(S_r^{-1})`$. The collective extractor replaces this baseline with $`O_r(S_r^{-1/r})`$ expected copies. Its crucial constructive property is that the multiplicity correction makes the desired output factor from every accepted residual occupation.
+Holmes et al. §II.C, Figures 2–3 and Equations (7)–(12), implement Hadamard products and iterated powers through postselection [HCSS23]. Repeating disjoint $`r`$-copy attempts costs $`O_r(S_r^{-1})`$. The collective extractor replaces this baseline with $`O_r(S_r^{-1/r})`$ expected copies. The multiplicity correction makes the pure output factor from every accepted residual occupation. The [ordered-rank proof](../science/mixed_states.md) uses the same correction to retain the required density-matrix terms after tracing out the residual and the selected positions.
 
 Quantum-to-quantum Bernoulli factories provide a second nonlinear-copy lineage. Jiang–Zhang–Sun characterize exact qubit transformations [JZS18]. Hoch et al. §III.C and Figure 2 study surplus-copy success for rational qubit transforms, including squared amplitudes; §§IV–V extend their input/function variants [HGCSS26]. These results establish nonlinear copy filters and the usefulness of surplus inputs. The dimension-growing arbitrary-$`N`$ resource law requires a different analysis.
 
 For implementation, Liu–Childs–Gottesman **Result 2 and §IV** supply deterministic coherent symmetrization for arbitrary superpositions of lists with repetitions [LCG26]. Its inverse is the compression step. Repeated-list support and clean ancillary registers matter to the coherent extractor. The circuit accounting includes that inverse, reversible extraction, the multiplicity rotation and cleanup; the symmetrizer is credited as an imported algorithm. Finite universal gate compilation uses the standard Solovay–Kitaev construction described by Dawson and Nielsen [DN05], with the heralding probability included in the conditional error budget.
 
-## Educational anchor
+## Sister results and learning source
 
-The project's single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018) [W18]**. The author's [book page](https://jhwatrous.github.io/books-and-courses.html) and [complete manuscript](https://jhwatrous.github.io/TQI.pdf) provide §2.2.2 for Choi/Kraus/Stinespring representations, §2.3 for measurements, §3.2 for fidelity, and §7.1.1 for the symmetric subspace. The [Watrous bridge](../learning/WATROUS_BRIDGE.md) translates these foundations into the project's notation and identifies the additional derivations and research dependencies. The [30-milestone map](../learning/MILESTONES.md) organizes the complete scientific route.
+[Quantum Hadamard Powers](https://github.com/GoGoKo699/Quantum-Hadamard-Powers) provides the ordered-rank extractor and reversible purification model. Its separate [reflection-budget](https://github.com/GoGoKo699/Quantum-Hadamard-Powers/blob/main/science/reflection_budget.md) and [forward-query](https://github.com/GoGoKo699/Quantum-Hadamard-Powers/blob/main/science/forward_only.md) analyses give the operational comparisons with the supplied-copy task.
 
-Watrous supplies foundations for the instrument and converse. The primary papers below supply the attributed research ingredients; they are not additional assigned educational anchors.
+Ronald de Wolf’s [*Quantum Computing: Lecture Notes*, version 6](https://arxiv.org/abs/1907.09415v6) is the educational anchor. The [learning bridge](../learning/DE_WOLF_BRIDGE.md) connects the notes to the instrument and the [30 milestones](../learning/MILESTONES.md).
 
 ## Primary references and precise versions
 

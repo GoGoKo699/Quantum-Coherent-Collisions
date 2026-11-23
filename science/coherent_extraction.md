@@ -2,6 +2,8 @@
 
 [Model](model.md) · [Unknown-moment algorithm](unknown_moment.md) · [Circuit](implementation.md)
 
+This page develops the pure-state occupation circuit. The [ordered-rank extension](mixed_states.md) gives a second exact route and applies to independent mixed inputs.
+
 ## Occupations retain the phases
 
 For an occupation vector $`n\in\mathbb{Z}_{\ge0}^{N}`$ with $`|n|=\sum_i n_i=t`$, let $`|n\rangle_{\mathrm{sym}}`$ be the normalized uniform superposition of all length-$`t`$ basis strings having those occupations. The identical-copy input lies in the symmetric subspace:
