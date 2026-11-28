@@ -1,0 +1,16 @@
+{
+  "README.md": [
+    "How the construction works",
+    "Mixed-state powers and source access"
+  ],
+  "science/implementation.md": [
+    "2. Measure only a Boolean eligibility flag",
+    "4. Sparse extraction and cleanup"
+  ],
+  "science/unknown_moment.md": [
+    "Algorithm"
+  ],
+  "science/mixed_states.md": [
+    "Exact mixed-copy extraction"
+  ]
+}
