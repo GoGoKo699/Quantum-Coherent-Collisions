@@ -45,13 +45,17 @@ These are worst-case scalings for fixed power. The model supplies independent co
 
 ## How the construction works
 
-The algorithm processes a batch coherently in the symmetric occupation basis. It accepts occupations with one sufficiently repeated label and applies a multiplicity correction. That correction makes the powered output factor exactly from the remaining registers. The repeated label is never measured, and the circuit clears the position and run-length records that would reveal it.
+1. **Calibrate the batch.** Measure independent copies in the specified basis until a label has occurred `r` times. If the pilot took `tau` copies, take a fresh batch of `t = r + floor(tau / (96 r!))` unmeasured copies. [Pilot and retry rules](science/unknown_moment.md#algorithm)
+2. **Test the batch coherently.** Reversibly sort its labels and mark whether exactly one run has length from `r` to `2r − 1`, with every other run shorter than `r`. Undo the counting and sorting, then measure the eligibility flag. If it passes, apply inverse symmetrization to get a clean sorted occupation list. [Eligibility and compression](science/implementation.md#2-measure-only-a-boolean-eligibility-flag)
+3. **Extract and herald.** Locate the unique run coherently and route `r` of its entries to the tail by controlled swaps. Copy the tail label to the output register and clear the tail. Use the specified rotation to give the success qubit’s `1` branch its run-length-dependent amplitude, then uncompute the position and run length from the output label and residual list. Measure the success qubit. On `1`, keep the output register and discard the residual, which factors from the exact powered state. On either failure, restart with fresh pilot and batch copies. [Extraction and cleanup](science/implementation.md#4-sparse-extraction-and-cleanup)
 
-A classical first-collision pilot selects the scale of a fresh coherent batch. A separate phase-covariant argument proves that operations without enough collision weight cannot carry the required multiplied phases with nontrivial uniform accuracy.
+Only the pilot copies and the two flags are measured. The resource counts include pilot copies, rejected batches, the sort and compression circuits, and the workspace for the realized batch size. Exactness holds in the ideal rotation model. [Charged resources and synthesis](science/implementation.md#6-gate-memory-and-depth-accounting)
 
 ## Mixed-state powers and source access
 
 The ordered collision filter prepares the normalized entrywise power of an unknown density matrix from independent copies. For $`p_i=\rho_{ii}`$, its successful output is $`\rho^{\circ r}/S_r`$, where $`S_r=\sum_i p_i^r`$. Off-diagonal entries undergo the same power as the diagonal. The expected and worst-case copy laws above apply to this task as well. [Mixed-state proof](science/mixed_states.md)
+
+For the ordered filter, prepare a uniform rank register with Hadamards and mark the ranks of `r` equal-label positions whose removal leaves every residual multiplicity below `r`. Measure only the mark. On success, route the common label, chosen positions and ordered residual into separate registers, recompute and erase the rank, and discard the positions and residual. The label register is the output. The same separate pilot and fresh-batch retries apply. [Ordered routing and rank erasure](science/mixed_states.md#exact-mixed-copy-extraction)
 
 [Quantum Hadamard Powers](https://github.com/GoGoKo699/Quantum-Hadamard-Powers) uses the same ordered filter with reversible purification access and analyzes what changes when [controlled reflections](https://github.com/GoGoKo699/Quantum-Hadamard-Powers/blob/main/science/reflection_budget.md) or [ordinary forward queries](https://github.com/GoGoKo699/Quantum-Hadamard-Powers/blob/main/science/forward_only.md) are supplied.
 
